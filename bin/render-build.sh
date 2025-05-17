@@ -3,6 +3,9 @@
 # Exit on error
 set -o errexit
 
+# Install PostgreSQL development files
+apt-get update -qq && apt-get install -y postgresql-client libpq-dev
+
 bundle install
 bin/rails assets:precompile
 bin/rails assets:clean
